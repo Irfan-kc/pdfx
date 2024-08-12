@@ -103,6 +103,8 @@ class _PinchPageState extends State<PinchPage> {
         ],
       ),
       body: PdfViewPinch(
+        isPanEnabled: true,
+        isScaleEnabled: true,
         builders: PdfViewPinchBuilders<DefaultBuilderOptions>(
           options: const DefaultBuilderOptions(),
           documentLoaderBuilder: (_) =>

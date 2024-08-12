@@ -42,6 +42,8 @@ class PdfViewPinch extends StatefulWidget {
       ],
     ),
     Key? key,
+    required this.isPanEnabled,
+    required this.isScaleEnabled,
   }) : super(key: key);
 
   /// Padding for the every page.
@@ -67,6 +69,12 @@ class PdfViewPinch extends StatefulWidget {
 
   /// Pdf widget page background decoration
   final BoxDecoration backgroundDecoration;
+
+  /// Pdf pan
+  final bool isPanEnabled;
+
+  /// Pdf scaling
+  final bool isScaleEnabled;
 
   /// Default page builder
   @override
@@ -536,8 +544,8 @@ class _PdfViewPinchState extends State<PdfViewPinch>
           boundaryMargin: const EdgeInsets.all(double.infinity),
           minScale: 0.25,
           maxScale: 20,
-          panEnabled: true,
-          scaleEnabled: true,
+          panEnabled: widget.isPanEnabled,
+          scaleEnabled: widget.isScaleEnabled,
           child: SafeArea(
             child: Stack(
               children: <Widget>[
